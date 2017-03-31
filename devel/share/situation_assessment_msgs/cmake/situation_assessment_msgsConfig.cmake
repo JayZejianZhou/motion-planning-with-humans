@@ -67,7 +67,7 @@ set(situation_assessment_msgs_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("TRUE" STREQUAL "TRUE")
-  set(situation_assessment_msgs_SOURCE_PREFIX /home/zejian/catkin_ws/src/pedsim_ros/visualization/spencer_messages/supervision/situation_assessment_msgs)
+  set(situation_assessment_msgs_SOURCE_PREFIX /home/zejian/catkin_ws/src/visualization/spencer_messages/supervision/situation_assessment_msgs)
   set(situation_assessment_msgs_DEVEL_PREFIX /home/zejian/catkin_ws/devel)
   set(situation_assessment_msgs_INSTALL_PREFIX "")
   set(situation_assessment_msgs_PREFIX ${situation_assessment_msgs_DEVEL_PREFIX})
@@ -103,7 +103,7 @@ if(NOT "/home/zejian/catkin_ws/devel/include " STREQUAL " ")
         message(FATAL_ERROR "Project 'situation_assessment_msgs' specifies '${idir}' as an include dir, which is not found.  It does not exist in '${include}'.  Ask the maintainer 'mfiore <mfiore@todo.todo>' to fix it.")
       endif()
     else()
-      message(FATAL_ERROR "Project 'situation_assessment_msgs' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/zejian/catkin_ws/src/pedsim_ros/visualization/spencer_messages/supervision/situation_assessment_msgs/${idir}'.  Ask the maintainer 'mfiore <mfiore@todo.todo>' to fix it.")
+      message(FATAL_ERROR "Project 'situation_assessment_msgs' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/zejian/catkin_ws/src/visualization/spencer_messages/supervision/situation_assessment_msgs/${idir}'.  Ask the maintainer 'mfiore <mfiore@todo.todo>' to fix it.")
     endif()
     _list_append_unique(situation_assessment_msgs_INCLUDE_DIRS ${include})
   endforeach()
@@ -122,7 +122,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/zejian/catkin_ws/devel/lib;/home/zejian/catkin_ws/devel/lib;/opt/ros/indigo/lib)
+    foreach(path /home/zejian/catkin_ws/devel/lib;/opt/ros/indigo/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)

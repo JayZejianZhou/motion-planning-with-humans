@@ -67,7 +67,7 @@ set(pedsim_simulator_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("TRUE" STREQUAL "TRUE")
-  set(pedsim_simulator_SOURCE_PREFIX /home/zejian/catkin_ws/src/pedsim_ros/pedsim_simulator)
+  set(pedsim_simulator_SOURCE_PREFIX /home/zejian/catkin_ws/src/pedsim_simulator)
   set(pedsim_simulator_DEVEL_PREFIX /home/zejian/catkin_ws/devel)
   set(pedsim_simulator_INSTALL_PREFIX "")
   set(pedsim_simulator_PREFIX ${pedsim_simulator_DEVEL_PREFIX})
@@ -91,9 +91,9 @@ endif()
 # flag project as catkin-based to distinguish if a find_package()-ed project is a catkin project
 set(pedsim_simulator_FOUND_CATKIN_PROJECT TRUE)
 
-if(NOT "/home/zejian/catkin_ws/devel/include;/home/zejian/catkin_ws/src/pedsim_ros/pedsim_simulator/include " STREQUAL " ")
+if(NOT "/home/zejian/catkin_ws/devel/include;/home/zejian/catkin_ws/src/pedsim_simulator/include " STREQUAL " ")
   set(pedsim_simulator_INCLUDE_DIRS "")
-  set(_include_dirs "/home/zejian/catkin_ws/devel/include;/home/zejian/catkin_ws/src/pedsim_ros/pedsim_simulator/include")
+  set(_include_dirs "/home/zejian/catkin_ws/devel/include;/home/zejian/catkin_ws/src/pedsim_simulator/include")
   foreach(idir ${_include_dirs})
     if(IS_ABSOLUTE ${idir} AND IS_DIRECTORY ${idir})
       set(include ${idir})
@@ -103,7 +103,7 @@ if(NOT "/home/zejian/catkin_ws/devel/include;/home/zejian/catkin_ws/src/pedsim_r
         message(FATAL_ERROR "Project 'pedsim_simulator' specifies '${idir}' as an include dir, which is not found.  It does not exist in '${include}'.  Ask the maintainer 'Billy Okal <okal@cs.uni-freiburg.de>, Omar Islas <omar@email.todo>' to fix it.")
       endif()
     else()
-      message(FATAL_ERROR "Project 'pedsim_simulator' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/zejian/catkin_ws/src/pedsim_ros/pedsim_simulator/${idir}'.  Ask the maintainer 'Billy Okal <okal@cs.uni-freiburg.de>, Omar Islas <omar@email.todo>' to fix it.")
+      message(FATAL_ERROR "Project 'pedsim_simulator' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/zejian/catkin_ws/src/pedsim_simulator/${idir}'.  Ask the maintainer 'Billy Okal <okal@cs.uni-freiburg.de>, Omar Islas <omar@email.todo>' to fix it.")
     endif()
     _list_append_unique(pedsim_simulator_INCLUDE_DIRS ${include})
   endforeach()
@@ -122,7 +122,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/zejian/catkin_ws/devel/lib;/home/zejian/catkin_ws/devel/lib;/opt/ros/indigo/lib)
+    foreach(path /home/zejian/catkin_ws/devel/lib;/opt/ros/indigo/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)

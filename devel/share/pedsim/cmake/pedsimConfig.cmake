@@ -67,7 +67,7 @@ set(pedsim_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("TRUE" STREQUAL "TRUE")
-  set(pedsim_SOURCE_PREFIX /home/zejian/catkin_ws/src/pedsim_ros/pedsim)
+  set(pedsim_SOURCE_PREFIX /home/zejian/catkin_ws/src/pedsim)
   set(pedsim_DEVEL_PREFIX /home/zejian/catkin_ws/devel)
   set(pedsim_INSTALL_PREFIX "")
   set(pedsim_PREFIX ${pedsim_DEVEL_PREFIX})
@@ -91,9 +91,9 @@ endif()
 # flag project as catkin-based to distinguish if a find_package()-ed project is a catkin project
 set(pedsim_FOUND_CATKIN_PROJECT TRUE)
 
-if(NOT "/home/zejian/catkin_ws/src/pedsim_ros/pedsim/include/ " STREQUAL " ")
+if(NOT "/home/zejian/catkin_ws/src/pedsim/include/ " STREQUAL " ")
   set(pedsim_INCLUDE_DIRS "")
-  set(_include_dirs "/home/zejian/catkin_ws/src/pedsim_ros/pedsim/include/")
+  set(_include_dirs "/home/zejian/catkin_ws/src/pedsim/include/")
   foreach(idir ${_include_dirs})
     if(IS_ABSOLUTE ${idir} AND IS_DIRECTORY ${idir})
       set(include ${idir})
@@ -103,7 +103,7 @@ if(NOT "/home/zejian/catkin_ws/src/pedsim_ros/pedsim/include/ " STREQUAL " ")
         message(FATAL_ERROR "Project 'pedsim' specifies '${idir}' as an include dir, which is not found.  It does not exist in '${include}'.  Ask the maintainer 'palmieri <palmieri@cs.uni-freiburg.de>' to fix it.")
       endif()
     else()
-      message(FATAL_ERROR "Project 'pedsim' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/zejian/catkin_ws/src/pedsim_ros/pedsim/${idir}'.  Ask the maintainer 'palmieri <palmieri@cs.uni-freiburg.de>' to fix it.")
+      message(FATAL_ERROR "Project 'pedsim' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/zejian/catkin_ws/src/pedsim/${idir}'.  Ask the maintainer 'palmieri <palmieri@cs.uni-freiburg.de>' to fix it.")
     endif()
     _list_append_unique(pedsim_INCLUDE_DIRS ${include})
   endforeach()
@@ -122,7 +122,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/zejian/catkin_ws/devel/lib;/home/zejian/catkin_ws/devel/lib;/opt/ros/indigo/lib)
+    foreach(path /home/zejian/catkin_ws/devel/lib;/opt/ros/indigo/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)
