@@ -1,4 +1,7 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> f398929d0e8d45d86bcf43bfeac11763dfc5a5cb
 build/
 bin/
 lib/
@@ -46,6 +49,7 @@ qtcreator-*
 
 # Catkin custom files
 CATKIN_IGNORE
+<<<<<<< HEAD
 =======
 .svn
 .svn/*
@@ -56,3 +60,5 @@ build
 .\#*
 
 >>>>>>> 8bdac96711a0ad539bbc23955c372048550395fc
+=======
+>>>>>>> f398929d0e8d45d86bcf43bfeac11763dfc5a5cb
